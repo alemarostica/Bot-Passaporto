@@ -4,7 +4,7 @@
 
 
 int main(void){
-    remove("file2.htlm");
+    remove("file2.html");
 
     char * fetch2 = {"./fetch > file2.html"};
     char * diff = {"diff file1.html file2.html"};
