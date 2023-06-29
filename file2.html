@@ -2,26 +2,13 @@
 
 
 
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xml:lang="it"
-	lang="it">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Passaporto Elettronico(mostraRegistiCittadino)</title>
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-<meta name="generator" content="Java Server Pages" />
-<meta name="author" content="Polizia di Stato" />
-<meta name="description"
-	content="Passaporto Elettronico-AgendaOnLine: pagina per la ricerca di disponibilita di appuntamento presso le strutture" />
-<meta name="keywords"
-	content="pubblica, amministrazione, passaporto, stato, polizia di stato, prenotazione passaporto, passaporto elettronico, polizia, documento identita, passaportonline, poliziadistato.it, cittadino" />
-<meta name="robots" content="noindex,nofollow" />
-<meta name="language" content="it" />
-<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+
+<title>Passaporto Elettronico (unauthorizedAccessCittadino)</title>
+
+
 <link rel="stylesheet" type="text/css" href="css/pe.css" />
 <link rel="stylesheet" type="text/css" href="css/storico.css" />
 <script type="text/javascript" src="js/popUpGuidaInLinea.js" ></script>
@@ -32,20 +19,10 @@
 	}
 </style>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.imposta_utenti tr:even').addClass("alt");
-		$("#infos tr.itemDetail").hide();
-		$(".infoImg").click(function() {
-			$(this).parent().parent().parent().next("tr").toggle();
-			$('#infos tr.data td').css('border-collapse', 'collapse');
-		});
-	});
-</script>
 </head>
+
 <body>
-	<div id="wrapper">
-		
+
 
 <div id="testa">
 <div id="logo">
@@ -76,11 +53,13 @@
         <form id="user-edit-form" action="CittadinoAction.do?codop=gestioneProfilo" method="post"></form>
 	<div class="clear"></div>
 </div>
-		<!--  INIZIO MENU CITTADINO -->
-		
-		<div id="menu">
-			<ul>
-				
+<div id="wrapper">
+
+    <!-- INIZIO MENU -->
+ 	
+    <div id="menu">
+ 	<ul>
+ 		
 
 				
 				
@@ -108,86 +87,23 @@
       	    		
       	    	
 
-				<li class="help"><a
-					href="help//mostraRegistiCittadino.html"
-					title="Guida in linea" accesskey="g">Guida in linea</a></li>
-			</ul>
-		</div>
-		<!--  FINE MENU CITTADINO -->
-
-
-		<div id="corpo">
-			<a name="skipnav-contenuto" href="#skipnav-contenuto"
-				id="skipnav-contenuto" accesskey="1">Inizio del contenuto</a>
-			<div class="richiesta">
-				<div id="appuntamenti_box">
-					
-					
-						<table class="imposta_utenti"
-							summary="Lista delle strutture per la prenotazione dell'appuntamento"
-							id="infos">
-							<caption>
-								Lista delle strutture disponibili
-							</caption>
-							<thead>
-								<tr>
-									<th id="descrizione">Descrizione</th>
-									<th id="indirizzo">Indirizzo</th>
-									<th id="cap">CAP</th>
-									<th id="citta">Citt&agrave;</th>
-									<th id="provincia">Provincia</th>
-									<th id="disponibilita">Disponibilita</th>
-									<th id="selezionaStruttura" class="seleziona">Seleziona</th>
-								</tr>
-							</thead>
-							<tbody>
-								
-									<tr id="98" class="data">
-										
-										<td headers="descrizione"> Questura di Mantova</td>
-										<td headers="indirizzo">Piazza Sordello, 46</td>
-										<td headers="cap">46100</td>
-										<td headers="citta">MANTOVA</td>
-										<td headers="provincia">MANTOVA</td>
-										
-										
-											<td headers="disponibilita">No</td>	
-											<td headers="selezionaStruttura" class="seleziona">
-												
-													<a href="#"> <img class="infoImg" src="img/info.png"
-														width="15" height="15"
-														alt="Informazioni"
-														title="Informazioni" />
-													</a>
-												
-											</td>
-										
-									</tr>
-									
-										<tr class="itemDetail"
-											id="expand_98">
-											<td colspan="8" style="background: #FFF"><span
-												class="infoUtente" id="tip_98"><p>L'AGENDA IN AUTOMATICO SI APRE ALLE 8.00 DELLA MATTINA.LA PROCEDURA E' CONSIDERATA A BUON FINE SOLO CON LA STAMPA DELLA RICEVUTA, CHE DOVRA' ESSERE PORTATA IL GIORNO DELL'APPUNTAMENTO CON I DOCUMENTI RICHIESTI.&nbsp;<strong>IMPORTANTE </strong>L'AGENDA HA UN ESTENSIONE DI 60 GG, SE IL 60&deg; GIORNO CADE&nbsp;DI <strong>SABATO, DOMENICA </strong>O <strong>GIORNATA FESTIVA </strong>L'AGENDA PASSAPORTI RIMANE CHIUSA. IL PASSAPORTO, SALVO MOTIVI OSTATIVI, VIENE RILASCIATO IN CIRCA 30 GIORNI DALLA PRESENTAZIONE DELL'ISTANZA. PER CHI ACCEDE PRIMA DELLE ORE 8.00 SI RACCOMANDA DI AGGIORNARE LA PAGINA. SI RICORDA CHE PRIMA DI EFFETTUARE LA PRENOTAZIONE DI UN VIAGGIO O L'ACQUISTO DI UN BIGLIETTO E' BUONA NORMA&nbsp; CONTROLLARE LA VALIDITA' DEL PROPRIO PASSAPORTO.</p>
-
-<p>&nbsp;</p></span></td>
-										</tr>
-										<tr style="display: none" id="blank"></tr>
-									
-								
-							</tbody>
-						</table>
-					
-					
-				</div>
-				<span class="navigation"> <a class="button_nav"
-					href="CittadinoAction.do?codop=backToIndex"
-					title="Indietro">Indietro</a>
-				</span>
-			</div>
-
-
-		</div>
-		
+	</ul>
+	<div class="clear"></div>
+ 	</div>
+ 	<!-- FINE MENU -->
+	
+	<div id="corpo">
+     <div class="richiesta">
+       	<div id="message_box">
+        		<h1>Accesso Negato</h1>
+                   	Non &egrave; possibile effettuare questa operazione.
+        </div>
+    </div>
+         <span class="navigation">
+			 <a href="CittadinoAction.do?codop=backToIndex" class="button_nav_xl" title="Torna alla Home">Torna alla Home</a>
+         </span>           
+    </div>
+   
  
 <div id="piede">
     <div id="bollini_accessibilita"> 
@@ -235,6 +151,7 @@
 	    </ul>
 	</div>
 </div>
-	</div>
+</div>
+
 </body>
 </html>
