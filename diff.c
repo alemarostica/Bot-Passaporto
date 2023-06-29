@@ -8,6 +8,7 @@ int main(void){
 
     char * fetch2 = {"./fetch > file2.html"};
     char * diff = {"diff -q file1.html file2.html"};
+    char * beep = {"play -q beep-01a.wav"};
 
     char * c_time_string;
     time_t current_time;
@@ -19,6 +20,7 @@ int main(void){
             current_time = time(NULL);
             c_time_string = ctime(&current_time);
             fprintf(stdout, "%s\n: ", c_time_string);
+            system(beep);
         }
         sleep(8);
     }
