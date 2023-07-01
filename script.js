@@ -8,8 +8,6 @@
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        GM_setValue
 // @grant        GM_getValue
-// @grant        GM_getResourceText
-// @resource     https://www.passaportonline.poliziadistato.it/CittadinoAction.do?codop=resultRicercaRegistiProvincia&provincia=MN
 // ==/UserScript==
 
 (async function() {
@@ -24,14 +22,10 @@
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    await sleep(1000);
-    playSound();
-    const pageText = GM_getResourceText('https://www.passaportonline.poliziadistato.it/CittadinoAction.do?codop=resultRicercaRegistiProvincia&provincia=MN');
-    const aaa = document.createElement("p");
-    aaa.textContent = pageText;
-    document.body.appendChild(aaa);
-    await sleep(100000);
-    
+    await sleep(1000); //Sleepo così aspetto in caso di ritardi
+    /* playSound(); */ //Era un test, dovrebbe funzionare
+    let disponibilità = document.getElementById('98').childNodes[11].innerHTML;
+
 
     location.reload();
 })();
