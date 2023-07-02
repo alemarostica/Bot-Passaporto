@@ -17,7 +17,8 @@
         player.preload = 'auto';
         player.play();
 
-        window.alert("Disponibilià cambiata!");
+        // window.alert("Disponibilià cambiata!");
+        // Tolgo il window.alert() perché è bloccante, ma ha più senso che spammi il suono
     }
 
     function sleep(ms){
