@@ -11,14 +11,12 @@
 
 (async function() {
     async function playSound(){
-        // SOund player funziona solo su Firefox perché le policy di autoplay di Chrome devono morire
         var player = document.createElement('audio');
         player.src = 'https://proxy.notificationsounds.com/featured-sounds/just-saying-593/download/file-sounds-1140-just-saying.mp3';
         player.preload = 'auto';
         player.play();
 
         // window.alert("Disponibilià cambiata!");
-        // Tolgo il window.alert() perché è bloccante, ma ha più senso che spammi il suono
     }
 
     function sleep(ms){
@@ -26,9 +24,9 @@
     }
 
     await sleep(5000); //Sleepo così aspetto in caso di ritardi
-    let table = document.getElementById('98').childNodes[11];
-    table.click();
-    let disponibilita = table.innerHTML;
+
+    // In realtà serve un click utente anche su Firefox, devo trovare un modo di simularlo
+    let disponibilita = document.getElementById('98').childNodes[11].innerHTML;
     if(disponibilita != "No"){
         await playSound();
         console.log("disponibilità diversa da no");
