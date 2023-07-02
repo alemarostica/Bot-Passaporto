@@ -2,30 +2,37 @@
 // @name         Refresher
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Refreshes.
+// @description  Refreshes and might play sound
 // @author       Jesosky
 // @match        https://www.passaportonline.poliziadistato.it/CittadinoAction.do?codop=resultRicercaRegistiProvincia&provincia=MN
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        GM_setValue
-// @grant        GM_getValue
+// @grant        none
 // ==/UserScript==
 
 (async function() {
-    function playSound(){
+    async function playSound(){
+        // SOund player funziona solo su Firefox perché le policy di autoplay di Chrome devono morire
         var player = document.createElement('audio');
         player.src = 'https://proxy.notificationsounds.com/featured-sounds/just-saying-593/download/file-sounds-1140-just-saying.mp3';
         player.preload = 'auto';
         player.play();
+
+        window.alert("Disponibilià cambiata!");
     }
 
     function sleep(ms){
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    await sleep(1000); //Sleepo così aspetto in caso di ritardi
-    /* playSound(); */ //Era un test, dovrebbe funzionare
-    let disponibilità = document.getElementById('98').childNodes[11].innerHTML;
-
+    await sleep(5000); //Sleepo così aspetto in caso di ritardi
+    let table = document.getElementById('98').childNodes[11];
+    table.click();
+    let disponibilita = table.innerHTML;
+    if(disponibilita != "No"){
+        await playSound();
+        console.log("disponibilità diversa da no");
+    }
+    await sleep(5000);
 
     location.reload();
 })();
