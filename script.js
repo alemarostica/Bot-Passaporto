@@ -28,7 +28,7 @@
     // In realtà serve un click utente anche su Firefox, devo trovare un modo di simularlo
     let disponibilita = document.getElementById('98').childNodes[11].innerHTML;
     if(disponibilita != "No"){
-        await playSound();
+        // await playSound();
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
         // window.alert("Disponibilità cambiata!");
         console.log("disponibilità diversa da no");
