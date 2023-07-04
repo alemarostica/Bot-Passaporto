@@ -29,6 +29,8 @@
     let disponibilita = document.getElementById('98').childNodes[11].innerHTML;
     if(disponibilita != "No"){
         await playSound();
+        window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+        // window.alert("Disponibilità cambiata!");
         console.log("disponibilità diversa da no");
     }
     await sleep(5000);
